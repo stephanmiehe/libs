@@ -247,7 +247,7 @@ public:
 
 	/*!
 	  \brief Get the maximum number of bytes currently in use by any CPU buffer
-     */
+	*/
 	uint64_t max_buf_used();
 
 	/*!
@@ -749,8 +749,8 @@ public:
 	void unset_eventmask(uint32_t event_id);
 
 	/*!
-	  \brief When reading events from a trace file, this function returns the
-	   read progress as a number between 0 and 100.
+	        \brief When reading events from a trace file, this function returns the
+		       read progress as a number between 0 and 100.
 	*/
 	double get_read_progress();
 
