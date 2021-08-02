@@ -1581,21 +1581,6 @@ static int32_t scap_next_nodriver(scap_t* handle, OUT scap_evt** pevent, OUT uin
 }
 #endif // _WIN32
 
-#ifdef _WIN32
-inline uint64_t get_windows_timestamp()
-{
-	FILETIME ft;
-	static const uint64_t EPOCH = ((uint64_t) 116444736000000000ULL);
-
-	GetSystemTimePreciseAsFileTime(&ft);
-
-	uint64_t ftl = (((uint64_t)ft.dwHighDateTime) << 32) + ft.dwLowDateTime;
-	ftl -= EPOCH;
-
-	return ftl * 100;
-}
-#endif // _WIN32
-
 uint64_t scap_max_buf_used(scap_t* handle)
 {
 #if defined(HAS_CAPTURE) && !defined(CYGWING_AGENT)
